@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Whiteboard.unity
+    guid: 5d74d84bcec1d4dd98e130b2ae23f157
   m_configObjects: {}

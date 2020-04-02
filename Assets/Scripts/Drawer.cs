@@ -8,7 +8,7 @@ namespace CasualMeeting
     {
         //brush status
         private Color brushColor = Color.black;
-        private int brushWidth = 3;
+        private int brushWidth = 1;
         private bool eraserFlag = false;
 
         //

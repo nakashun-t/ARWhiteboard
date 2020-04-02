@@ -2,20 +2,23 @@
 using Photon.Realtime;
 using UnityEngine;
 
-public class SyncManager : MonoBehaviourPunCallbacks
+namespace CasualMeeting
 {
-    void Start()
+    public class SyncManager : MonoBehaviourPunCallbacks
     {
-        PhotonNetwork.ConnectUsingSettings();
-    }
+        void Start()
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
 
-    public override void OnConnectedToMaster()
-    {
-        PhotonNetwork.JoinOrCreateRoom("CasualMeetingRoom", new RoomOptions(), TypedLobby.Default);
-    }
+        public override void OnConnectedToMaster()
+        {
+            PhotonNetwork.JoinOrCreateRoom("CasualMeetingRoom", new RoomOptions(), TypedLobby.Default);
+        }
 
-    public override void OnJoinedRoom()
-    {
-        PhotonNetwork.Instantiate("Drawer", Vector3.zero, Quaternion.identity);
+        public override void OnJoinedRoom()
+        {
+            PhotonNetwork.Instantiate("Drawer", Vector3.zero, Quaternion.identity);
+        }
     }
 }

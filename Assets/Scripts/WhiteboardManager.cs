@@ -8,8 +8,6 @@ namespace CasualMeeting
 {
     public class WhiteboardManager : MonoBehaviourPunCallbacks
     {
-        private int localGenerateNumber = 0;
-        private int remoteGenerateNumber = 0;
         private int generatedWhiteboardNumber = 0;
 
         //parameter for whiteboard position
@@ -35,7 +33,6 @@ namespace CasualMeeting
         private void Start()
         {
             GenerateWhiteboard();
-//            canvas = GameObject.FindObjectOfType<Canvas>();
         }
 
         public void GenerateWhiteboard()

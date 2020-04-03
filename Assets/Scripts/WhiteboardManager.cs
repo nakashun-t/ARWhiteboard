@@ -28,13 +28,12 @@ namespace CasualMeeting
         {
             GenerateLocal();
 
-            photonView.RPC(nameof(Generate), RpcTarget.Others, localGenerateNumber + remoteGenerateNumber);
+            photonView.RPC(nameof(Generate), RpcTarget.Others, generatedWhiteboardNumber);
         }
 
         private void GenerateLocal()
         {
-            localGenerateNumber++;
-            generatedWhiteboardNumber = localGenerateNumber + remoteGenerateNumber;
+            generatedWhiteboardNumber++;
             Debug.Log("generatedNum = " + generatedWhiteboardNumber);
             GameObject board = Instantiate(whiteboardPrefab, Vector3.zero, Quaternion.identity);
         }
@@ -42,7 +41,6 @@ namespace CasualMeeting
         [PunRPC]
         private void Generate(int num)
         {
-            remoteGenerateNumber++;
             generatedWhiteboardNumber = num;
             Instantiate(whiteboardPrefab, Vector3.zero, Quaternion.identity);
         }

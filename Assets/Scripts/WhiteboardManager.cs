@@ -8,18 +8,18 @@ namespace CasualMeeting
     public class WhiteboardManager : MonoBehaviourPunCallbacks
     {
         private Camera camera;
-        private Vector3 cameraOffset = new Vector3(0, 26f, 0);
 
         private int localGenerateNumber = 0;
         private int remoteGenerateNumber = 0;
         private int generatedWhiteboardNumber = 0;
 
-        //whiteboard position variables
         private static Vector3 initialPosition = new Vector3(0, 0, 0);
         private Vector3 offset = new Vector3(45f, 0, 0);
 
         [SerializeField]
         private GameObject whiteboardPrefab;
+        [SerializeField]
+        private GameObject whiteboardButtonPrefab;
 
         public int GeneratedWhiteboardNumber
         {
@@ -45,7 +45,7 @@ namespace CasualMeeting
             Debug.Log("generatedNum = " + generatedWhiteboardNumber);
             GameObject board = Instantiate(whiteboardPrefab, Vector3.zero, Quaternion.identity);
             AlignWhiteboard(board);
-            camera.transform.position = board.transform.position + cameraOffset;
+            camera.GetComponent<CameraManager>().MoveCamera(board.transform.position);
         }
 
         [PunRPC]
@@ -53,6 +53,7 @@ namespace CasualMeeting
         {
             generatedWhiteboardNumber = num;
             GameObject board = Instantiate(whiteboardPrefab, Vector3.zero, Quaternion.identity);
+
             AlignWhiteboard(board);
         }
 

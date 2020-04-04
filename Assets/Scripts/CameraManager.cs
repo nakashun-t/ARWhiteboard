@@ -10,7 +10,7 @@ namespace CasualMeeting
 
         public void MoveCamera(Vector3 targetWhiteboardPosition)
         {
-            this.transform.position = targetWhiteboardPosition + cameraOffset;
+            this.transform.localPosition = targetWhiteboardPosition + cameraOffset;
         }
     }
 }

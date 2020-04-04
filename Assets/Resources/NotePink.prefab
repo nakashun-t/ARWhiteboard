@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1654021879178383428}
   - component: {fileID: 1654021879178383429}
   - component: {fileID: 3792435598140674421}
+  - component: {fileID: -8391899970721819578}
   m_Layer: 0
   m_Name: NotePink
   m_TagString: DrawableObject
@@ -109,3 +110,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ResetOnPlay: 1
   ResetColor: {r: 1, g: 0.80784315, b: 0.8745098, a: 1}
+--- !u!114 &-8391899970721819578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654021879178383431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0afd4e7f07d1441499ecf7b7122b88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

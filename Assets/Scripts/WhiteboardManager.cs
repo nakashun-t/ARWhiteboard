@@ -8,7 +8,7 @@ namespace CasualMeeting
 {
     public class WhiteboardManager : MonoBehaviourPunCallbacks
     {
-        private int targetWhiteboardID = 0;
+        private int targetWhiteboardID = 1;
 
         private int generatedWhiteboardNumber = 0;
 
@@ -56,6 +56,7 @@ namespace CasualMeeting
             GameObject board = Instantiate(whiteboardPrefab, Vector3.zero, Quaternion.identity);
             AlignWhiteboard(board);
             Camera.main.GetComponent<CameraManager>().MoveCamera(board.transform.position);
+            targetWhiteboardID = generatedWhiteboardNumber;
 
             GenerateSwitcher();
         }

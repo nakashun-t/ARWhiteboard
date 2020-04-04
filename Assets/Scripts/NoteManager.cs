@@ -117,7 +117,11 @@ namespace CasualMeeting
                 {
                     note.transform.rotation = targetWhiteboard.transform.rotation;
                     note.transform.parent = targetWhiteboard.transform;
-                    note.transform.localPosition = noteInitialAlignPosition;
+
+                    int xindex = noteNumberInTarget % 5;
+                    int yindex = noteNumberInTarget / 5;
+
+                    note.transform.localPosition = noteInitialAlignPosition + xoffset * xindex + yoffset * yindex;
                 }
             }
         }

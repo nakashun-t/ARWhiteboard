@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1654021879178383427}
   - component: {fileID: 1654021879178383428}
   - component: {fileID: 1654021879178383429}
-  - component: {fileID: 1654021879178383430}
+  - component: {fileID: 3792435598140674421}
   m_Layer: 0
   m_Name: NotePink
-  m_TagString: PaintableCanvas
+  m_TagString: DrawableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1654021879178383430
+--- !u!114 &3792435598140674421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,9 +104,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1654021879178383431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 403ff4ef135c645ecaa771a11c327b5e, type: 3}
+  m_Script: {fileID: 11500000, guid: f2c1102a1727f4dfdad616c37b61bfff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResetCanvasOnPlay: 1
+  ResetOnPlay: 1
   ResetColor: {r: 1, g: 0.80784315, b: 0.8745098, a: 1}
-  canvasID: 0

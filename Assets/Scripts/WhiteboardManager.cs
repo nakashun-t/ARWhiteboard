@@ -8,6 +8,8 @@ namespace CasualMeeting
 {
     public class WhiteboardManager : MonoBehaviourPunCallbacks
     {
+        private int targetWhiteboardID = 0;
+
         private int generatedWhiteboardNumber = 0;
 
         //parameter for whiteboard position
@@ -28,6 +30,11 @@ namespace CasualMeeting
         public int GeneratedWhiteboardNumber
         {
             get { return generatedWhiteboardNumber; }
+        }
+
+        public int TargetWhiteboardID
+        {
+            get { return targetWhiteboardID; }
         }
 
         private void Start()
@@ -91,6 +98,7 @@ namespace CasualMeeting
             {
                 if(board.WhiteboardID == num)
                 {
+                    targetWhiteboardID = num;
                     Camera.main.GetComponent<CameraManager>().MoveCamera(board.transform.position);
                 }
             }

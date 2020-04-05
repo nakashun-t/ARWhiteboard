@@ -11,16 +11,9 @@ namespace CasualMeeting
         private GameObject pinkNote;
         [SerializeField]
         private GameObject greenNote;
-        [SerializeField]
-        private GameObject dragHandle;
 
         private int generatedNoteNumber = 0;
         private int latestLocalGenratedNoteID = 0;
-
-        /*private int targetWhiteboardID;
-        private Vector3 whiteBoardPosition;
-        private Vector3 whiteBoardRotation;
-        */
 
         //note position parameter
         private Vector3 noteGeneratingOffset = new Vector3(-2f, -2.6f, 1.5f);

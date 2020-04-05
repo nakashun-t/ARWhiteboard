@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - DrawableObject
   - Whiteboard
+  - Note
   layers:
   - Default
   - TransparentFX

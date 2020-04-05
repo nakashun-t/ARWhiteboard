@@ -23,7 +23,7 @@ namespace CasualMeeting
         */
 
         //note position parameter
-        private Vector3 noteGeneratingOffset = new Vector3(0, -2.6f, 0);
+        private Vector3 noteGeneratingOffset = new Vector3(-2f, -2.6f, 1.5f);
         private Vector3 localNoteInitialPosition = new Vector3(-4f, 0.1f, 4f);
         private Vector3 noteInitialAlignPosition = new Vector3(-3.5f, 0.1f, 4f);
         private Vector3 xoffset = new Vector3(1.3f, 0, 0);
@@ -60,7 +60,6 @@ namespace CasualMeeting
         private GameObject Generate(int noteColor, Vector3 position)
         {
             GameObject note = Instantiate(CheckNote(noteColor), position, Quaternion.identity);
-            note.tag = "DrawableObject";
             return note;
         }
 

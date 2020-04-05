@@ -2140,11 +2140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbefa955c2b244139889d5f4b4986542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orangeNote: {fileID: 1654021879178383431, guid: 00d35792df7954ce6b6b8086ae29d691,
+  orangeNote: {fileID: 4061110949891715913, guid: 08ae81b382d82427c8955dc52cc325fa,
     type: 3}
-  pinkNote: {fileID: 1654021879178383431, guid: 72f554334a3f549b1a70a2c879595f62,
+  pinkNote: {fileID: 9209665792882087724, guid: 222011d26b2484216a1625d2667cc2f1,
     type: 3}
-  greenNote: {fileID: 1654021879178383431, guid: 5f3f4cfebf2004913b732a4837532e99,
+  greenNote: {fileID: 8302771169467945363, guid: a36d41a95c9a240cbafb2a549c3f5440,
     type: 3}
   dragHandle: {fileID: 5605130810662948758, guid: 8afa281207d784ccf84b26e781c40b24,
     type: 3}

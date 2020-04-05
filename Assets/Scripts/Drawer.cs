@@ -18,6 +18,7 @@ namespace CasualMeeting
         private Vector2 defaultTexCoord = Vector2.zero;
         private Vector2 previousTexCoord;
 
+        DragManager dragManager = null;
 
         public Color BrushColor
         {
@@ -49,6 +50,7 @@ namespace CasualMeeting
         void Start()
         {
             drawTargetObject = GameObject.FindObjectOfType<DrawableObject>();
+            dragManager = GameObject.FindObjectOfType<DragManager>();
         }
 
         void Update()
@@ -77,7 +79,7 @@ namespace CasualMeeting
                     RaycastHit hitInfo;
                     if (Physics.Raycast(ray, out hitInfo))
                     {
-                        if (hitInfo.collider != null && hitInfo.collider.tag == "DrawableObject")
+                        if (hitInfo.collider != null && hitInfo.collider.tag == "DrawableObject" && !dragManager.IsDragging)
                         {
                             var collidedObject = hitInfo.transform.GetComponent<DrawableObject>();
                             int drawTargetObjectID = collidedObject.DrawableObjectID;

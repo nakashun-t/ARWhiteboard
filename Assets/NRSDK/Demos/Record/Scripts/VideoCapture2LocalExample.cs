@@ -15,8 +15,8 @@ namespace NRKernal.NRExamples
             get
             {
                 string timeStamp = Time.time.ToString().Replace(".", "").Replace(":", "");
-                string filename = string.Format("TestVideo_{0}.mp4", timeStamp);
-                string basepath = "/sdcard/RecordVideos/";
+                string filename = string.Format("Video_{0}.mp4", timeStamp);
+                string basepath = "/sdcard/Download/";
                 if (!Directory.Exists(basepath))
                 {
                     Directory.CreateDirectory(basepath);
@@ -31,6 +31,29 @@ namespace NRKernal.NRExamples
         void Start()
         {
             CreateVideoCaptureTest();
+        }
+
+        void Update()
+        {
+            if (m_VideoCapture == null)
+            {
+                return;
+            }
+            if (Input.GetKeyDown(KeyCode.R) || NRInput.GetButtonDown(ControllerButton.TRIGGER))
+            {
+                StartVideoCapture();
+
+                //              Previewer.SetData(m_VideoCapture.RecordBehaviour.PreviewTexture, true);
+                Previewer.SetData(m_VideoCapture.PreviewTexture, true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.T) || NRInput.GetButtonDown(ControllerButton.HOME))
+            {
+                StopVideoCapture();
+
+                //              Previewer.SetData(m_VideoCapture.RecordBehaviour.PreviewTexture, false);
+                Previewer.SetData(m_VideoCapture.PreviewTexture, false);
+            }
         }
 
         void CreateVideoCaptureTest()

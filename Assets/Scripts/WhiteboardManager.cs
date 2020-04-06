@@ -13,19 +13,23 @@ namespace CasualMeeting
         private int generatedWhiteboardNumber = 0;
 
         //parameter for whiteboard position
-        private static Vector3 initialPosition = new Vector3(0, 0, 0);
+        private static Vector3 initialPositionNreal = new Vector3(0, 0, 50);
+        private static Vector3 initialRotationNreal = new Vector3(-90f, 0, 0);
         private Vector3 offset = new Vector3(45f, 0, 0);
 
         private Vector3 switcherInitialPosition = new Vector3(-30, -135, 0);
         private Vector3 switcherOffset = new Vector3(0, -35f, 0);
 
-
         [SerializeField]
         private GameObject whiteboardPrefab;
+        [SerializeField]
+        private Camera mainCamera;
         [SerializeField]
         private GameObject cameraSwitcherPrefab;
         [SerializeField]
         private Canvas canvas;
+
+        private SyncManager syncManager = null;
 
         public int GeneratedWhiteboardNumber
         {
@@ -39,6 +43,7 @@ namespace CasualMeeting
 
         private void Start()
         {
+            syncManager = GameObject.FindObjectOfType<SyncManager>();
             GenerateWhiteboard();
         }
 
@@ -55,7 +60,10 @@ namespace CasualMeeting
             Debug.Log("generatedNum = " + generatedWhiteboardNumber);
             GameObject board = Instantiate(whiteboardPrefab, Vector3.zero, Quaternion.identity);
             AlignWhiteboard(board);
-            Camera.main.GetComponent<CameraManager>().MoveCamera(board.transform.position);
+            if(!syncManager.IsNreal)
+            {
+                mainCamera.GetComponent<CameraManager>().MoveCamera(board.transform.position);
+            }
             targetWhiteboardID = generatedWhiteboardNumber;
 
             GenerateSwitcher();
@@ -100,14 +108,22 @@ namespace CasualMeeting
                 if(board.WhiteboardID == num)
                 {
                     targetWhiteboardID = num;
-                    Camera.main.GetComponent<CameraManager>().MoveCamera(board.transform.position);
+                    mainCamera.GetComponent<CameraManager>().MoveCamera(board.transform.position);
                 }
             }
         }
 
         private void AlignWhiteboard(GameObject board)
         {
-            board.transform.position = (generatedWhiteboardNumber - 1) * offset;
+            Vector3 initialPosition = Vector3.zero;
+            if(syncManager.IsNreal)
+            {
+                initialPosition = initialPositionNreal;
+                board.transform.rotation = Quaternion.Euler(-90, 0, 0);
+            }
+            board.transform.position = initialPosition + (generatedWhiteboardNumber - 1) * offset;
+            //board.transform.position = (generatedWhiteboardNumber - 1) * offset;
+            
         }
     }
 }

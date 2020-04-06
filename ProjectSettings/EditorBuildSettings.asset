@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Whiteboard.unity
-    guid: 5d74d84bcec1d4dd98e130b2ae23f157
+    path: Assets/Scenes/WhiteboardNreal.unity
+    guid: f3d6d3304b82d482fa49afedfbdf68bd
   m_configObjects: {}

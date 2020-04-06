@@ -12,6 +12,10 @@ namespace CasualMeeting
         [SerializeField]
         private GameObject greenNote;
 
+        [SerializeField]
+        private Camera mainCamera;
+
+
         private int generatedNoteNumber = 0;
         private int latestLocalGenratedNoteID = 0;
 
@@ -23,6 +27,7 @@ namespace CasualMeeting
         private Vector3 xoffset = new Vector3(1.3f, 0, 0);
         private Vector3 yoffset = new Vector3(0, 0, -1.2f);
 
+
         public int GeneratedNoteNumber
         {
             get { return generatedNoteNumber; }
@@ -31,6 +36,7 @@ namespace CasualMeeting
         #region GenerateNote
         public void GenerateNote(int noteColor)
         {
+            Debug.Log("Generate note");
             GenerateLocalNote(noteColor);
             photonView.RPC(nameof(GenerateRemoteNote), RpcTarget.Others, noteColor, generatedNoteNumber);
         }
@@ -38,7 +44,8 @@ namespace CasualMeeting
         private void GenerateLocalNote(int noteColor)
         {
             generatedNoteNumber++;
-            Vector3 generatePosition = Camera.main.transform.position + noteGeneratingOffset;
+            Vector3 generatePosition = mainCamera.transform.position + noteGeneratingOffset;
+            //Vector3 generatePosition = Camera.main.transform.position + noteGeneratingOffset;
             GameObject note = Generate(noteColor, generatePosition);
             //latestLocalGenratedNoteID = note.GetComponent<Note>().NoteID;
             latestLocalGenratedNoteID = generatedNoteNumber;

@@ -1,4 +1,8 @@
-﻿Shader "SimpleDrawing/DrawLine"
+﻿//Copyright (c) 2019 Soichiro Sugimoto
+//Released under the MIT license
+//https://github.com/sotanmochi/SimpleDrawing-Unity
+
+Shader "SimpleDrawing/DrawLine"
 {
     Properties
     {
@@ -124,7 +128,3 @@
         }
     }
 }
-
-//Copyright (c) 2019 Soichiro Sugimoto
-//Released under the MIT license
-//https://github.com/sotanmochi/SimpleDrawing-Unity

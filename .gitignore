@@ -5,6 +5,9 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+Assets/NRSDK
+Assets/Photon
+!/Assets/Photon/PhotonUnityNetworking/Code/CustomTypes.cs
 # Visual Studio cache directory
 .vs/
 .vscode/
